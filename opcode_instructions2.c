@@ -2,10 +2,9 @@
 
 /**
  * _queue - sets the format of the data to a queue (FIFO)
- *
  * @doubly: head of the linked list
  * @l_num: line number;
- * Return: no return
+ * Return: void
  */
 void _queue(stack_t **doubly, unsigned int l_num)
 {
@@ -17,10 +16,9 @@ void _queue(stack_t **doubly, unsigned int l_num)
 
 /**
  * _stack - sets the format fo the data to a stack (LIFO)
- *
  * @doubly: head of the linked list
  * @l_num: line number;
- * Return: no return
+ * Return: void
  */
 void _stack(stack_t **doubly, unsigned int l_num)
 {
@@ -32,10 +30,9 @@ void _stack(stack_t **doubly, unsigned int l_num)
 
 /**
  * _add - adds the top two elements of the stack
- *
  * @doubly: head of the linked list
  * @l_num: line number;
- * Return: no return
+ * Return: void
  */
 void _add(stack_t **doubly, unsigned int l_num)
 {
@@ -61,10 +58,9 @@ void _add(stack_t **doubly, unsigned int l_num)
 
 /**
  * _nop - doesn't do anythinhg
- *
  * @doubly: head of the linked list
  * @l_num: line number;
- * Return: no return
+ * Return: void
  */
 void _nop(stack_t **doubly, unsigned int l_num)
 {
@@ -74,10 +70,9 @@ void _nop(stack_t **doubly, unsigned int l_num)
 
 /**
  * _sub - subtracts the top element to the second top element of the stack
- *
  * @doubly: head of the linked list
  * @l_num: line number;
- * Return: no return
+ * Return: void
  */
 void _sub(stack_t **doubly, unsigned int l_num)
 {
@@ -95,7 +90,6 @@ void _sub(stack_t **doubly, unsigned int l_num)
 		free_variables_global();
 		exit(EXIT_FAILURE);
 	}
-
 	aux = (*doubly)->next;
 	aux->n -= (*doubly)->n;
 	_pop(doubly, l_num);

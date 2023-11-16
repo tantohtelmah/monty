@@ -4,14 +4,14 @@
  * _rotl - rotates the first element to the bottom and  the second to the top
  *
  * @doubly: head of the linked list
- * @cline: line number;
+ * @l_num: line number;
  * Return: no return
  */
-void _rotl(stack_t **doubly, unsigned int cline)
+void _rotl(stack_t **doubly, unsigned int l_num)
 {
 	stack_t *aux1 = NULL;
 	stack_t *aux2 = NULL;
-	(void)cline;
+	(void)l_num;
 
 	if (*doubly == NULL)
 		return;
@@ -36,13 +36,13 @@ void _rotl(stack_t **doubly, unsigned int cline)
  * _rotr - reverse the stack
  *
  * @doubly: head of the linked list
- * @cline: line number
+ * @l_num: line number
  * Return: no return
  */
-void _rotr(stack_t **doubly, unsigned int cline)
+void _rotr(stack_t **doubly, unsigned int l_num)
 {
 	stack_t *aux = NULL;
-	(void)cline;
+	(void)l_num;
 
 	if (*doubly == NULL)
 		return;

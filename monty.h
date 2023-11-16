@@ -47,6 +47,8 @@ typedef struct globals
  * @opcode: the opcode
  * @f: function to handle the opcode
  */
+
+
 typedef struct instruction_s
 {
 	char *opcode;
@@ -58,27 +60,27 @@ extern global_t variables_global;
 /* opcode_instructuions*/
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
-void _pint(stack_t **doubly, unsigned int cline);
-void _pop(stack_t **doubly, unsigned int cline);
-void _swap(stack_t **doubly, unsigned int cline);
-void _queue(stack_t **doubly, unsigned int cline);
-void _stack(stack_t **doubly, unsigned int cline);
-void _add(stack_t **doubly, unsigned int cline);
-void _nop(stack_t **doubly, unsigned int cline);
-void _sub(stack_t **doubly, unsigned int cline);
-void _div(stack_t **doubly, unsigned int cline);
-void _mul(stack_t **doubly, unsigned int cline);
-void _mod(stack_t **doubly, unsigned int cline);
-void _pchar(stack_t **doubly, unsigned int cline);
-void _pstr(stack_t **doubly, unsigned int cline);
-void _rotl(stack_t **doubly, unsigned int cline);
-void _rotr(stack_t **doubly, unsigned int cline);
+void _pint(stack_t **doubly, unsigned int l_num);
+void _pop(stack_t **doubly, unsigned int l_num);
+void _swap(stack_t **doubly, unsigned int l_num);
+void _queue(stack_t **doubly, unsigned int l_num);
+void _stack(stack_t **doubly, unsigned int l_num);
+void _add(stack_t **doubly, unsigned int l_num);
+void _nop(stack_t **doubly, unsigned int l_num);
+void _sub(stack_t **doubly, unsigned int l_num);
+void _div(stack_t **doubly, unsigned int l_num);
+void _mul(stack_t **doubly, unsigned int l_num);
+void _mod(stack_t **doubly, unsigned int l_num);
+void _pchar(stack_t **doubly, unsigned int l_num);
+void _pstr(stack_t **doubly, unsigned int l_num);
+void _rotl(stack_t **doubly, unsigned int l_num);
+void _rotr(stack_t **doubly, unsigned int l_num);
 
 /*get function*/
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
 
 /*imported functions*/
-int _sch(char *s, char c);
+int _search(char *s, char c);
 char *_strtoky(char *s, char *d);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void *_calloc(unsigned int nmemb, unsigned int size);
@@ -90,6 +92,6 @@ stack_t *add_dnodeint(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
 
 /* main */
-void free_vglo(void);
+void free_variable_global(void);
 
 #endif

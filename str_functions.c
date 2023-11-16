@@ -4,7 +4,6 @@
  * @s1: type str compared
  * @s2: type str compared
  * Return: 0 if s1 and s2 are equals.
- *         another value if they are different
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -25,7 +24,7 @@ int _strcmp(char *s1, char *s2)
  * @c: char to find
  * Return: 1 if success 0 if not
  */
-int _sch(char *s, char c)
+int _search(char *s, char c)
 {
 	int cont = 0;
 
