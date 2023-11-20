@@ -46,7 +46,7 @@ void _add(stack_t **doubly, unsigned int l_num)
 
 	if (m < 2)
 	{
-		dprintf(2, "L%u: can't add, stack too short\n", l_num);
+		fprintf(stdout, "L%u: can't add, stack too short\n", l_num);
 		free_variables_global();
 		exit(EXIT_FAILURE);
 	}
@@ -86,7 +86,7 @@ void _sub(stack_t **doubly, unsigned int l_num)
 
 	if (m < 2)
 	{
-		dprintf(2, "L%u: can't sub, stack too short\n", l_num);
+		fprintf(stdout, "L%u: can't sub, stack too short\n", l_num);
 		free_variables_global();
 		exit(EXIT_FAILURE);
 	}

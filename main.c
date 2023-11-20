@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 global_t variables_global;
 
@@ -41,14 +42,14 @@ FILE *check_input(int argc, char *argv[])
 
 	if (argc == 1 || argc > 2)
 	{
-		dprintf(2, "USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
 
 	if (file == NULL)
 	{
-		dprintf(2, "Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	return (file);
@@ -70,7 +71,7 @@ int main(int argc, char *argv[])
 
 	file = check_input(argc, argv);
 	start_variables_global(file);
-	nlines = getline(&variables_global.buffer, &size, file);
+	nlines = _getline(&variables_global.buffer, &size, file);
 	while (nlines != -1)
 	{
 		lines[0] = _strtoky(variables_global.buffer, " \t\n");
@@ -79,15 +80,15 @@ int main(int argc, char *argv[])
 			f = get_opcodes(lines[0]);
 			if (!f)
 			{
-				dprintf(2, "L%u: ", variables_global.cont);
-				dprintf(2, "unknown instruction %s\n", lines[0]);
+				fprintf(stdout, "L%u: ", variables_global.cont);
+				fprintf(stderr, "unknown instruction %s\n", lines[0]);
 				free_variables_global();
 				exit(EXIT_FAILURE);
 			}
 			variables_global.arg = _strtoky(NULL, " \t\n");
 			f(&variables_global.head, variables_global.cont);
 		}
-		nlines = getline(&variables_global.buffer, &size, file);
+		nlines = _getline(&variables_global.buffer, &size, file);
 		variables_global.cont++;
 	}
 

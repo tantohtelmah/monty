@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <ctype.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -85,6 +86,7 @@ char *_strtoky(char *s, char *d);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void *_calloc(unsigned int nmemb, unsigned int size);
 int _strcmp(char *s1, char *s2);
+ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 
 /* doubly linked list functions */
 stack_t *add_dnodeint_end(stack_t **head, const int n);
@@ -92,6 +94,6 @@ stack_t *add_dnodeint(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
 
 /* main */
-void free_variable_global(void);
+void free_variables_global(void);
 
 #endif

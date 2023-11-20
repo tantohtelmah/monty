@@ -12,8 +12,8 @@ void _push(stack_t **doubly, unsigned int l_num)
 
 	if (!variables_global.arg)
 	{
-		dprintf(2, "L%u: ", l_num);
-		dprintf(2, "usage: push integer\n");
+		fprintf(stdout, "L%u: ", l_num);
+		fprintf(stderr, "usage: push integer\n");
 		free_variables_global();
 		exit(EXIT_FAILURE);
 	}
@@ -21,8 +21,8 @@ void _push(stack_t **doubly, unsigned int l_num)
 	{
 		if (!isdigit(variables_global.arg[j]) && variables_global.arg[j] != '-')
 		{
-			dprintf(2, "L%u: ", l_num);
-			dprintf(2, "usage: push integer\n");
+			fprintf(stdout, "L%u: ", l_num);
+			fprintf(stdout, "usage: push integer\n");
 			free_variables_global();
 			exit(EXIT_FAILURE);
 		}
@@ -70,8 +70,8 @@ void _pint(stack_t **doubly, unsigned int l_num)
 
 	if (*doubly == NULL)
 	{
-		dprintf(2, "L%u: ", l_num);
-		dprintf(2, "can't pint, stack empty\n");
+		fprintf(stdout, "L%u: ", l_num);
+		fprintf(stderr, "can't pint, stack empty\n");
 		free_variables_global();
 		exit(EXIT_FAILURE);
 	}
@@ -92,7 +92,7 @@ void _pop(stack_t **doubly, unsigned int l_num)
 
 	if (doubly == NULL || *doubly == NULL)
 	{
-		dprintf(2, "L%u: can't pop an empty stack\n", l_num);
+		fprintf(stdout, "L%u: can't pop an empty stack\n", l_num);
 		free_variables_global();
 		exit(EXIT_FAILURE);
 	}
@@ -120,7 +120,7 @@ void _swap(stack_t **doubly, unsigned int l_num)
 
 	if (m < 2)
 	{
-		dprintf(2, "L%u: can't swap, stack too short\n", l_num);
+		fprintf(stdout, "L%u: can't swap, stack too short\n", l_num);
 		free_variables_global();
 		exit(EXIT_FAILURE);
 	}
